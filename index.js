@@ -25,10 +25,10 @@
 
 var inherits = require('util').inherits;
 
-var LifxClient = require('node-lifx').Client;
-var LifxLight = require('node-lifx').Light;
-var LifxPacket = require('node-lifx').packet;
-var LifxConstants = require('node-lifx').constants;
+var LifxClient = require('lifx-lan-client').Client;
+var LifxLight = require('lifx-lan-client').Light;
+var LifxPacket = require('lifx-lan-client').packet;
+var LifxConstants = require('lifx-lan-client').constants;
 
 var Client = new LifxClient();
 var Characteristic, ColorTemperature, Kelvin, PlatformAccessory, Service, UUIDGen;
