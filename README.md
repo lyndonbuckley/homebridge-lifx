@@ -1,9 +1,6 @@
-# homebridge-lifx-lan
+# homebridge-lifx-lan-client
 
-[![npm package](https://nodei.co/npm/homebridge-lifx-lan.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/homebridge-lifx-lan/)
-
-[![donate](https://img.shields.io/badge/%24-Buy%20me%20a%20coffee-ff69b4.svg)](https://www.buymeacoffee.com/devbobo)
-[![Slack Channel](https://img.shields.io/badge/slack-homebridge--lifx-e01563.svg)](https://homebridgeteam.slack.com/messages/C1NE2GM0S/)
+[![npm package](https://nodei.co/npm/homebridge-lifx-lan-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/homebridge-lifx-lan-client/)
 
 LiFx LAN platform plugin for [Homebridge](https://github.com/nfarina/homebridge).
 
@@ -24,7 +21,7 @@ Currently supports:
 
 # Updating
 
-- npm update -g homebridge-lifx-lan
+- npm update -g homebridge-lifx-lan-client
 
 # Configuration
 
@@ -44,4 +41,4 @@ Configuration sample:
 
 # Credits
 
-- Marius Rumpf for his awesome [node-lifx](https://github.com/MariusRumpf/node-lifx) library
+- Marius Rumpf for his awesome [lifx-lan-client](https://github.com/node-lifx/lifx-lan-client) library
