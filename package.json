@@ -1,24 +1,24 @@
 {
-    "name": "homebridge-lifx-lan",
-    "version": "0.2.6",
+    "name": "homebridge-lifx-lan-client",
+    "version": "0.3.0",
     "description": "LiFx LAN platform plugin for Homebridge",
-    "homepage": "https://github.com/devbobo/homebridge-lifx-lan#readme",
+    "homepage": "https://github.com/hameerabbasi/homebridge-lifx-lan-client#readme",
     "repository": {
         "type": "git",
-        "url": "git://github.com/devbobo/homebridge-lifx-lan.git"
+        "url": "git://github.com/hameerabbasi/homebridge-lifx-lan-client.git"
     },
     "licenses" : [
         {
         "type" : "MIT",
-        "url" : "https://github.com/devbobo/homebridge-lifx-lan/raw/master/LICENSE"
+        "url" : "https://github.com/hameerabbasi/homebridge-lifx-lan-client/raw/master/LICENSE"
         }
     ],
     "bugs": {
-        "url": "http://github.com/devbobo/homebridge-lifx-lan/issues"
+        "url": "http://github.com/hameerabbasi/homebridge-lifx-lan-client/issues"
     },
     "engines": {
         "node": ">=6",
-        "homebridge": ">=0.4.29"
+        "homebridge": ">=1.0.0"
     },
     "keywords": [
         "homebridge-plugin",
@@ -26,6 +26,6 @@
         "smart bulb"
     ],
     "dependencies": {
-        "node-lifx": ">=0.8.0"
+        "lifx-lan-client": ">=1.0.0"
     }
 }

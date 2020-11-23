@@ -11,7 +11,7 @@
 //         "ignoredDevices": ["abcd1234561", "efabcd6721"]
 //                                          // optional: Array of bulb ids to ignore (from accessory.context.id)
 //                                          // If you have a switch in your HomeWizard you don't want to expose to Siri. Put the ids in here and they will be ignored.
-//         ** optional node-lifx parameters **
+//         ** optional lifx-lan-client parameters **
 //         "broadcast": '255.255.255.255',   // optional: Broadcast address for bulb discovery
 //         "lightOfflineTolerance": 3,       // optional: A light is offline if not seen for the given amount of discoveries
 //         "messageHandlerTimeout": 45000,   // optional: in ms, if not answer in time an error is provided to get methods
@@ -25,10 +25,10 @@
 
 var inherits = require('util').inherits;
 
-var LifxClient = require('node-lifx').Client;
-var LifxLight = require('node-lifx').Light;
-var LifxPacket = require('node-lifx').packet;
-var LifxConstants = require('node-lifx').constants;
+var LifxClient = require('lifx-lan-client').Client;
+var LifxLight = require('lifx-lan-client').Light;
+var LifxPacket = require('lifx-lan-client').packet;
+var LifxConstants = require('lifx-lan-client').constants;
 
 var Client = new LifxClient();
 var Characteristic, ColorTemperature, Kelvin, PlatformAccessory, Service, UUIDGen;
