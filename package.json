@@ -1,20 +1,20 @@
 {
-    "name": "homebridge-lifx-lan-client",
+    "name": "homebridge-lifx-lyndonbuckley",
     "version": "0.3.0",
-    "description": "LiFx LAN platform plugin for Homebridge",
-    "homepage": "https://github.com/hameerabbasi/homebridge-lifx-lan-client#readme",
+    "description": "LiFX for Homebridge",
+    "homepage": "https://github.com/lyndonbuckley/homebridge-lifx#readme",
     "repository": {
         "type": "git",
-        "url": "git://github.com/hameerabbasi/homebridge-lifx-lan-client.git"
+        "url": "git://github.com/lyndonbuckley/homebridge-lifx.git"
     },
     "licenses" : [
         {
         "type" : "MIT",
-        "url" : "https://github.com/hameerabbasi/homebridge-lifx-lan-client/raw/master/LICENSE"
+        "url" : "https://github.com/lyndonbuckley/homebridge-lifx/raw/master/LICENSE"
         }
     ],
     "bugs": {
-        "url": "http://github.com/hameerabbasi/homebridge-lifx-lan-client/issues"
+        "url": "http://github.com/lyndonbuckley/homebridge-lifx/issues"
     },
     "engines": {
         "node": ">=6",
