@@ -606,7 +606,7 @@ function LifxAccessory(log, accessory, bulb, data) {
         this.accessory.context.id = bulb.id;
     }
 
-    if (this.accessory.context.name === undefined) {
+    if (this.accessory.displayName || this.accessory.context.name === undefined) {
         this.accessory.context.name = this.accessory.displayName;
     }
 
