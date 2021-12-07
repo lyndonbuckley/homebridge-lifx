@@ -38,6 +38,10 @@ var fadeDuration;
 const UUID_KELVIN = 'C4E24248-04AC-44AF-ACFF-40164E829DBA';
 const UUID_COLOR_TEMPERATURE = '000000CE-0000-1000-8000-0026BB765291';
 
+function miredConversion(value) {
+    return parseInt(1000000/value);
+}
+
 module.exports = function(homebridge) {
     PlatformAccessory = homebridge.platformAccessory;
 
@@ -68,8 +72,8 @@ module.exports = function(homebridge) {
 
         this.setProps({
             format: Characteristic.Formats.UINT32,
-            maxValue: 400,
-            minValue: 112,
+            maxValue: miredConversion(LifxConstants.HSBK_MINIMUM_KELVIN),
+            minValue: miredConversion(LifxConstants.HSBK_MAXIMUM_KELVIN),
             minStep: 1,
             perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY]
         });
@@ -669,7 +673,7 @@ LifxAccessory.prototype.addEventHandler = function(service, characteristic) {
         case ColorTemperature:
             service
                 .getCharacteristic(ColorTemperature)
-                .setValue(this.miredConversion(this.color.kelvin))
+                .setValue(miredConversion(this.color.kelvin))
                 .on('set', this.setKelvin.bind(this));
             break;
         case Characteristic.CurrentAmbientLightLevel:
@@ -722,7 +726,7 @@ LifxAccessory.prototype.get = function (type) {
             break;
         case "kelvin":
             this.log("%s - Get %s: %d", this.accessory.context.name, type, this.color[type]);
-            state = this.miredConversion(this.color[type]);
+            state = miredConversion(this.color[type]);
             break;
         case "power":
             this.log("%s - Get power: %d", this.accessory.context.name, this.power);
@@ -772,7 +776,7 @@ LifxAccessory.prototype.getState = function(type, callback) {
             }
 
             if (service.testCharacteristic(ColorTemperature)) {
-                service.getCharacteristic(ColorTemperature).updateValue(this.miredConversion(this.color.kelvin));
+                service.getCharacteristic(ColorTemperature).updateValue(miredConversion(this.color.kelvin));
             }
 
             if (service.testCharacteristic(Characteristic.Hue)) {
@@ -801,7 +805,7 @@ LifxAccessory.prototype.setColor = function(type, value, callback){
     var kelvin;
 
     if (type === 'kelvin') {
-        kelvin = this.miredConversion(value);
+        kelvin = miredConversion(value);
         this.log("%s - Set %s: %dK [%d mired]", this.accessory.context.name, type, kelvin, value);
         value = kelvin;
 
@@ -827,10 +831,6 @@ LifxAccessory.prototype.setColor = function(type, value, callback){
     this.bulb.color(this.color.hue, this.color.saturation, this.color.brightness, this.color.kelvin, fadeDuration, function (err) {
         callback(null);
     });
-}
-
-LifxAccessory.prototype.miredConversion = function(value) {
-    return parseInt(1000000/value);
 }
 
 LifxAccessory.prototype.setHue = function(value, callback) {
